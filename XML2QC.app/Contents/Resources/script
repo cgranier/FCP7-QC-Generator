@@ -24,9 +24,8 @@ if ($argc < 2) {
 else {
 	// Load a FCP XML file with all the edited episode sequences
 	$filename = $argv[1];
-	$path_parts = pathinfo($argv[1]);
-	$outpath = $path_parts['dirname'];
-	$outfile = $outpath . '/' . $path_parts['filename'] . '.csv';
+	// $outfile = $argv[2];
+	$outfile = pathinfo($filename)['filename'] . '.csv';
 	$xml=simplexml_load_file($filename);
 
 	// Figure out the timebase. Should be 25 or 30
